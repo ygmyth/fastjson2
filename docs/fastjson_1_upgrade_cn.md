@@ -7,7 +7,7 @@
 * 支持 JSON Schema https://github.com/alibaba/fastjson2/wiki/json_schema_cn
 * 统一文本和二进制API，在RPC、Redis场景也可以使用FASTJSON v2
 * 更安全，完全删除autoType白名单，提升安全性 https://github.com/alibaba/fastjson2/wiki/fastjson2_autotype_cn
-* 新版本会长期维护，目标为下一个时间提供高性能JSON库，提需求能更快得到响应，提BUG也更快修复
+* 新版本会长期维护，目标为下一个十年提供高性能JSON库，提需求能更快得到响应，提BUG也更快修复
 
 ## 2. 如何升级
 
@@ -34,7 +34,7 @@ FASTJSON v2项目目前处于活跃状态，会不定期发布新版本，你可
 ### 2.3. 使用新API升级
 使用新API是建议的升级方式，使用新的API能获得更多的功能。
 
-* 包名编程
+* 包名变化，
   `FASTJSON` v2和1.x版本使用不同的package，新的package名称是com.alibaba.fastjson2，新package和之前不同，可以实现1.x和2.x共存
 
 ```java
@@ -43,7 +43,7 @@ import com.alibaba.fastjson2.JSONObject;
 import com.alibaba.fastjson2.JSONArray;
 ```
 
-* Maven依赖
+* Maven依赖，
   Maven依赖的groupId和1.x不同，使用了新的groupId`com.alibaba.fastjson2`
 ```xml
 <dependency>
@@ -73,7 +73,7 @@ import com.alibaba.fastjson2.JSONArray;
 
 ## 4. 常见问题
 ## 4.1. ParserConfig.getGlobalInstance().addAccept()如何兼容
-在2.x版本中，ParserConfig添加autoType白名单的功能在ObjectReaderProvider中提供，可以如下的方式配置autoType白名单。
+在2.x版本中，ParserConfig添加autoType白名单的功能在ObjectReaderProvider中提供，可以用如下的方式配置autoType白名单。
 ```java
 JSONFactory.getDefaultObjectReaderProvider().addAutoTypeAccept("com.mycompany.xxx");
 ```
@@ -109,7 +109,7 @@ FASTJSON v2中有比较完善的扩展机制，如下：
 
 ## 4.4 SerializerFeature.UseISO8601DateFormat在fastjson2的替代方案
 
-fastjson2的JSONWriter.Feature没有和UseISO8601DateFormat的Feature，代替方法是使用format="iso8601"，如下：
+fastjson2的JSONWriter.Feature没有UseISO8601DateFormat的Feature，代替方法是使用format="iso8601"，如下：
 ```java
 import com.alibaba.fastjson2.JSON;
 
